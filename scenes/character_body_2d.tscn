@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://itk8o0htsu28"]
+
+[ext_resource type="Texture2D" uid="uid://coe8svxo5hkso" path="res://assets/Legacy Collection/Legacy Collection/Assets/Warped/Characters/alien-walking-enemy/Sprites/Idle/frame1.png" id="1_4vejd"]
+[ext_resource type="Texture2D" uid="uid://besig3csi5e7s" path="res://assets/Legacy Collection/Legacy Collection/Assets/Warped/Characters/alien-walking-enemy/Sprites/Idle/frame2.png" id="2_ws0vm"]
+[ext_resource type="Texture2D" uid="uid://5ojo3aj0m18c" path="res://assets/Legacy Collection/Legacy Collection/Assets/Warped/Characters/alien-walking-enemy/Sprites/Idle/frame3.png" id="3_rhr3r"]
+[ext_resource type="Texture2D" uid="uid://d3ou6uxywqcq3" path="res://assets/Legacy Collection/Legacy Collection/Assets/Warped/Characters/alien-walking-enemy/Sprites/Idle/frame4.png" id="4_t53lx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi2kj"]
+atlas = ExtResource("1_4vejd")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cibgq"]
+atlas = ExtResource("2_ws0vm")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfdas"]
+atlas = ExtResource("3_rhr3r")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nwgm"]
+atlas = ExtResource("4_t53lx")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jq7o2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi2kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cibgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfdas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nwgm")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jq7o2"]
+radius = 12.0415945
+
+[node name="allien" type="CharacterBody2D" unique_id=1523712168]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2086239169]
+position = Vector2(-1, -24)
+sprite_frames = SubResource("SpriteFrames_jq7o2")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=40497210]
+position = Vector2(2, -16)
+shape = SubResource("CircleShape2D_jq7o2")

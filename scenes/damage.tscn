@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cjfu5w48l5i77"]
+
+[sub_resource type="GDScript" id="GDScript_rysoc"]
+script/source = "extends Area2D
+@export var damage: int = 1
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method(\"take_damage\"):
+		body.take_damage(damage)
+	else:
+		print(\"body没有被检测到\")
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_osyly"]
+radius = 19.0
+height = 80.0
+
+[node name="damage" type="Area2D" unique_id=81820900]
+position = Vector2(41, 340)
+collision_mask = 2
+script = SubResource("GDScript_rysoc")
+
+[node name="Timer" type="Timer" parent="." unique_id=1586027984]
+wait_time = 0.714
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1540728386]
+shape = SubResource("CapsuleShape2D_osyly")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

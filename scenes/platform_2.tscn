@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cb8d1og2wuixb"]
+
+[ext_resource type="Texture2D" uid="uid://1ylac6w6mw0b" path="res://assets/Legacy Collection/Legacy Collection/Assets/Gothicvania/Environments/Day-Platformer/PNG/tileset.png" id="1_kx63a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osyly"]
+size = Vector2(32, 32)
+
+[node name="platform 2" type="AnimatableBody2D" unique_id=1245434793]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=14065708]
+texture = ExtResource("1_kx63a")
+region_enabled = true
+region_rect = Rect2(224, 64, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1563593981]
+shape = SubResource("RectangleShape2D_osyly")

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cwut7b5461t1p"]
+
+[ext_resource type="Texture2D" uid="uid://dak581xv7jmfp" path="res://assets/Legacy Collection/Legacy Collection/Assets/Gothicvania/Characters/demon-Files/Sprites/Idle/idle1.png" id="1_j12ep"]
+[ext_resource type="Script" uid="uid://i8i7naexm3p5" path="res://scripts/demon.gd" id="1_u20x4"]
+[ext_resource type="Texture2D" uid="uid://c5v050m4n640g" path="res://assets/Legacy Collection/Legacy Collection/Assets/Gothicvania/Characters/demon-Files/Sprites/Idle/idle2.png" id="2_u20x4"]
+[ext_resource type="Texture2D" uid="uid://kbrxbiwddb3s" path="res://assets/Legacy Collection/Legacy Collection/Assets/Gothicvania/Characters/demon-Files/Sprites/Idle/idle3.png" id="3_15y58"]
+[ext_resource type="Texture2D" uid="uid://bjlwjqnmpa35h" path="res://assets/Legacy Collection/Legacy Collection/Assets/Gothicvania/Characters/demon-Files/Sprites/Idle/idle4.png" id="4_vqfja"]
+[ext_resource type="Texture2D" uid="uid://hmwfpna5m8e3" path="res://assets/Legacy Collection/Legacy Collection/Assets/Gothicvania/Characters/demon-Files/Sprites/Idle/idle5.png" id="5_yafd3"]
+[ext_resource type="Texture2D" uid="uid://8bdkyn6flu48" path="res://assets/Legacy Collection/Legacy Collection/Assets/Gothicvania/Characters/demon-Files/Sprites/Idle/idle6.png" id="6_dqrhk"]
+[ext_resource type="PackedScene" uid="uid://cjfu5w48l5i77" path="res://scenes/damage.tscn" id="8_u20x4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1jby"]
+atlas = ExtResource("1_j12ep")
+region = Rect2(0, 0, 256, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxq6n"]
+atlas = ExtResource("2_u20x4")
+region = Rect2(0, 0, 256, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyopu"]
+atlas = ExtResource("3_15y58")
+region = Rect2(0, 0, 256, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxqi1"]
+atlas = ExtResource("4_vqfja")
+region = Rect2(0, 0, 256, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usbmy"]
+atlas = ExtResource("5_yafd3")
+region = Rect2(0, 0, 256, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vk75"]
+atlas = ExtResource("6_dqrhk")
+region = Rect2(0, 0, 256, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbl55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1jby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxq6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyopu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxqi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usbmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vk75")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="demon" type="Node2D" unique_id=2113579619]
+position = Vector2(17, -1)
+script = ExtResource("1_u20x4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=590966143]
+position = Vector2(-26, -12)
+scale = Vector2(0.9296875, 0.90909094)
+sprite_frames = SubResource("SpriteFrames_lbl55")
+autoplay = "default"
+frame = 1
+frame_progress = 0.77583945
+flip_h = true
+
+[node name="RayCast_left" type="RayCast2D" parent="." unique_id=17687456]
+position = Vector2(-14, 2)
+target_position = Vector2(-57, 0)
+
+[node name="RayCast_right" type="RayCast2D" parent="." unique_id=615483320]
+position = Vector2(-13, 1)
+target_position = Vector2(60, 0)
+
+[node name="damage" parent="." unique_id=81820900 instance=ExtResource("8_u20x4")]
+position = Vector2(-15, -3)

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dohbymo2m2h5c"]
+
+[ext_resource type="Texture2D" uid="uid://mss43x2orxuv" path="res://assets/Legacy Collection/Legacy Collection/Assets/Gothicvania/Environments/Rocky-Tileset/PNG/preview-rocky-tileset.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq7o2"]
+size = Vector2(48, 16)
+
+[node name="platform" type="AnimatableBody2D" unique_id=2079831563]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=29236528]
+
+[node name="PreviewRockyTileset" type="Sprite2D" parent="." unique_id=795707389]
+position = Vector2(2, -4)
+texture = ExtResource("1_ba0x2")
+region_enabled = true
+region_rect = Rect2(176, 64, 48, 16)
+region_filter_clip_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140521367]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_jq7o2")
